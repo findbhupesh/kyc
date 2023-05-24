@@ -1,4 +1,4 @@
-import requests
+import requests,json
 
 def verify_bank(ifsc,bacc):
     requrl = 'https://kyc-api.aadhaarkyc.io/api/v1/bank-verification/'
@@ -10,5 +10,7 @@ def verify_bank(ifsc,bacc):
         "ifsc_details": True
     }
     response = requests.request("POST", requrl, headers=header, data=body)
-
-    print(response.text)
+    data = json.dumps(response.json())
+    file_name = 'files/'+ifsc+'_'+bacc+'.json'
+    with open(file_name, "w") as outfile:
+        outfile.write(data)

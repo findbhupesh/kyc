@@ -11,6 +11,6 @@ def verify_bank(ifsc,bacc):
     }
     response = requests.request("POST", requrl, headers=header, data=body)
     data = json.dumps(response.json())
-    file_name = 'files/'+ifsc+'_'+bacc+'.json'
+    file_name = 'out/'+ifsc+'_'+bacc+'.json'
     with open(file_name, "w") as outfile:
         outfile.write(data)

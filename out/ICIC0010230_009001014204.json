@@ -1,0 +1,1 @@
+{"data": {"client_id": "bank_validation_gClzjnfUUlhcczdiwknn", "account_exists": false, "upi_id": null, "full_name": null, "remarks": "pending", "ifsc_details": {}}, "status_code": 422, "success": false, "message": "Verification Failed.", "message_code": "verification_failed"}
